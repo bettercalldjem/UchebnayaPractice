@@ -354,12 +354,8 @@ else
 Console.WriteLine("Удаление пробелов");
 Console.WriteLine("Ваша строка");
 string str = Console.ReadLine();
-string str1="";
-for(int i =1;i< str.Length; i++)
+while (str.Contains("  ")) 
 {
-    if(str[i] != ' ' || str[i-1] !=' ')
-    {
-        str1= str1 + str[i-1];
-    }
+    str = str.Replace("  ", " ");
 }
-Console.WriteLine(str1);
+Console.WriteLine(str);
