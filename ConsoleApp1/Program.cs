@@ -359,3 +359,21 @@ while (str.Contains("  "))
     str = str.Replace("  ", " ");
 }
 Console.WriteLine(str);
+//task 21
+/*Console.WriteLine("Введите первую дату (ДД.ММ.ГГГГ):");
+string firstDateInput = Console.ReadLine();
+Console.WriteLine("Введите вторую дату (ДД.ММ.ГГГГ):");
+string secondDateInput = Console.ReadLine();
+DateTime firstDate;
+DateTime secondDate;
+if (DateTime.TryParseExact(firstDateInput, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out firstDate) &&
+    DateTime.TryParseExact(secondDateInput, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out secondDate))
+{
+    TimeSpan difference = secondDate - firstDate;
+    int daysDifference = (int)difference.TotalDays;
+    Console.WriteLine($"Количество дней между датами: {daysDifference}");
+}
+else
+{
+    Console.WriteLine("Некорректный формат даты. Используйте формат ДД.ММ.ГГГГ.");
+}*/
