@@ -377,3 +377,67 @@ else
 {
     Console.WriteLine("Некорректный формат даты. Используйте формат ДД.ММ.ГГГГ.");
 }*/
+//task 22
+/*using System.Linq;
+using System.Reflection.PortableExecutable;
+using System.Security.Cryptography.X509Certificates;
+static void CheckPhoneNum()
+{
+    Console.WriteLine("Введите номер телефона (проверка работает только на номера России):");
+    string phoneNumber = Console.ReadLine();
+    if (phoneNumber.Length > 11)
+    {
+        Console.WriteLine("Номер телефона должен состоять из 11 цифр.");
+    }
+    if (phoneNumber.Length == 11 && phoneNumber[0] == '8' && phoneNumber[1] == '9')
+    {
+        bool isNumeric = true;
+        foreach (char c in phoneNumber)
+        {
+            if (!char.IsDigit(c))
+            {
+                isNumeric = false;
+                break;
+            }
+        }
+
+        if (isNumeric)
+        {
+            Console.WriteLine("Номер телефона введен корректно!");
+        }
+        else
+        {
+            Console.WriteLine("Номер телефона должен состоять только из цифр.");
+        }
+    }
+
+}
+static void CheckEmail()
+{
+    Console.WriteLine("Введите вашу эл.почту");
+    string email = Console.ReadLine();
+    if (email.Contains("@") && email.Contains(".") && email.IndexOf('@') > 0 && email.IndexOf('.') > email.IndexOf('@'))
+    {
+        Console.WriteLine("Ваша почта верна");
+    }
+    else
+    {
+        Console.WriteLine("Ваша почта не верна");
+    }
+
+}
+Console.WriteLine("\nВыберите, что вы хотите проверить: ");
+Console.WriteLine("1. Номер телефона");
+Console.WriteLine("2. email");
+int choice = int.Parse(Console.ReadLine());
+switch (choice)
+{
+    case 1:
+        CheckPhoneNum();
+        break;
+    case 2:
+        CheckEmail();
+        break;
+}
+    */
+    
