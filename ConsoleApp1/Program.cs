@@ -482,3 +482,34 @@ public class PasswordGenerator
     }
 }
 */
+//task 24
+void AllSum(List<int> priList)
+{
+    int sum = 0;
+    foreach (int i in priList)
+    {
+        sum =+ i;
+    }
+    Console.WriteLine(sum);
+}
+List<string> purList = new List<string>();
+List<int> priList = new List<int>();
+Console.WriteLine("Вводите ваши покупочки и их цену (в рублях)");
+Console.WriteLine("\n Чтобы закончить, введите 1");
+bool work = true;
+
+    Console.WriteLine("Ваш товар: ");
+    string purchase = Console.ReadLine();
+    purList.Add(purchase);
+    Console.WriteLine("Добавлено: " + purchase);
+    Console.WriteLine("Стоимость товара " + purchase);
+    int price = int.Parse(Console.ReadLine());
+    Console.WriteLine("Стоимость добавлена!");
+Console.WriteLine("Ваш товар: ");
+ purchase = Console.ReadLine();
+purList.Add(purchase);
+Console.WriteLine("Добавлено: " + purchase);
+Console.WriteLine("Стоимость товара " + purchase);
+price = int.Parse(Console.ReadLine());
+Console.WriteLine("Стоимость добавлена!");
+AllSum(priList);
