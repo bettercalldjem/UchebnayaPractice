@@ -440,4 +440,45 @@ switch (choice)
         break;
 }
     */
-    
+    /*//task 23
+public class PasswordGenerator
+{
+    public static string GeneratePassword(int length, bool useLowercase, bool useUppercase, bool useNumbers, bool useSpecial)
+    {
+        Random random = new Random();
+        if (length <= 0)
+            throw new ArgumentException("Длина пароля должна быть положительным числом");
+
+        char[] password = new char[length];
+        string charsToUse = "";
+
+        if (useLowercase) charsToUse += "abcdefghijklmnopqrstuvwxyz";
+        if (useUppercase) charsToUse += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (useNumbers) charsToUse += "0123456789";
+        if (useSpecial) charsToUse += "!@#$%^&*()-_=+";
+
+        for (int i = 0; i < length; i++)
+        {
+            password[i] = charsToUse[random.Next(charsToUse.Length)];
+        }
+
+        return new string(password);
+    }
+    static void Main()
+    {
+        Console.WriteLine("Введите желаемую длину пароля");
+        int length = int.Parse(Console.ReadLine());
+        Console.WriteLine("Далее выбирайте true/false");
+        Console.WriteLine("Использовать маленькие буквы?");
+        bool useLowercase = bool.Parse(Console.ReadLine());
+        Console.WriteLine("Использовать большие буквы?");
+        bool useUppercase = bool.Parse(Console.ReadLine());
+        Console.WriteLine("Использовать цифры?");
+        bool useNumbers = bool.Parse(Console.ReadLine());
+        Console.WriteLine("Использовать специальные символы");
+        bool useSpecial = bool.Parse(Console.ReadLine());
+        string password = PasswordGenerator.GeneratePassword(length, useLowercase, useUppercase, useNumbers, useSpecial);
+        Console.WriteLine("Вот ваш пароль " + password);
+    }
+}
+*/
