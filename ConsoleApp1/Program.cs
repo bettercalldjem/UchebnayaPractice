@@ -745,3 +745,55 @@ class QuadraticEquationSolver
         }
     }
 }*/
+/*////28
+using System;
+
+class LinearSystemSolver
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Введите коэффициент a1: ");
+        double a1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите коэффициент b1: ");
+        double b1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите коэффициент c1: ");
+        double c1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите коэффициент a2: ");
+        double a2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите коэффициент b2: ");
+        double b2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите коэффициент c2: ");
+        double c2 = Convert.ToDouble(Console.ReadLine());
+
+        SolveSystem(a1, b1, c1, a2, b2, c2);
+    }
+
+    static void SolveSystem(double a1, double b1, double c1, double a2, double b2, double c2)
+    {
+        double determinant = a1 * b2 - a2 * b1;
+
+        if (determinant == 0)
+        {
+            if (a1 * c2 - a2 * c1 == 0 && b1 * c2 - b2 * c1 == 0)
+            {
+                Console.WriteLine("Система имеет бесконечно много решений");
+            }
+            else
+            {
+                Console.WriteLine("Система не имеет решений");
+            }
+        }
+        else
+        {
+            double x = (b2 * c1 - b1 * c2) / determinant;
+            double y = (a1 * c2 - a2 * c1) / determinant;
+
+            Console.WriteLine($"Решение системы: x = {x}, y = {y}");
+        }
+    }
+}*/
