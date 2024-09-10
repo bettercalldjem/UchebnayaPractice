@@ -841,6 +841,7 @@ class DiskMonitoring
         }
     }
 }*/
+//30
 /*using System;
 using System.IO;
 
@@ -957,3 +958,45 @@ class FileManager
         }
     }
 }*/
+//31
+/*using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+
+class JsonProcessor
+{
+    static void Main(string[] args)
+    {
+        string jsonFilePath = "data.json";
+
+        try
+        {
+            string json = File.ReadAllText(jsonFilePath);
+            List<Data> data = JsonConvert.DeserializeObject<List<Data>>(json);
+
+            Console.WriteLine("Данные из JSON-файла:");
+            Console.WriteLine("------------------------");
+
+            Console.WriteLine("| Имя | Возраст | Город |");
+            Console.WriteLine("| --- | --- | --- |");
+
+            foreach (Data item in data)
+            {
+                Console.WriteLine($"| {item.Name} | {item.Age} | {item.City} |");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка чтения JSON-файла: " + ex.Message);
+        }
+    }
+}
+
+public class Data
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string City { get; set; }
+}
+*/
