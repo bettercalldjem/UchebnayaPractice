@@ -624,6 +624,44 @@ class Purchase
         Price = price;
     }
 }*/
+//25
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace WordAnalyzer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите текст:");
+            string text = Console.ReadLine();
+            string[] words = text.Split(new char[] { ' ', ',', '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+            var wordFrequency = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+                string lowerWord = word.ToLower();
+                if (wordFrequency.ContainsKey(lowerWord))
+                {
+                    wordFrequency[lowerWord]++;
+                }
+                else
+                {
+                    wordFrequency.Add(lowerWord, 1);
+                }
+            }
+
+            var sortedWords = wordFrequency.OrderByDescending(pair => pair.Value);
+            Console.WriteLine("Статистика частоты слов:");
+            foreach (var pair in sortedWords)
+            {
+                Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
+            }
+        }
+    }
+}*/
 ////26 
 /*using System;
 
