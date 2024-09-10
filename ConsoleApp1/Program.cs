@@ -576,34 +576,51 @@ public class PasswordGenerator
     }
 }
 */
-//task 24
-void AllSum(List<int> priList)
+/*class magazine
 {
-    int sum = 0;
-    foreach (int i in priList)
+    static void Main(string[] args)
     {
-        sum =+ i;
-    }
-    Console.WriteLine(sum);
-}
-List<string> purList = new List<string>();
-List<int> priList = new List<int>();
-Console.WriteLine("Вводите ваши покупочки и их цену (в рублях)");
-Console.WriteLine("\n Чтобы закончить, введите 1");
-bool work = true;
+        Console.Write("Введите количество покупок: ");
+        int count = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Ваш товар: ");
-    string purchase = Console.ReadLine();
-    purList.Add(purchase);
-    Console.WriteLine("Добавлено: " + purchase);
-    Console.WriteLine("Стоимость товара " + purchase);
-    int price = int.Parse(Console.ReadLine());
-    Console.WriteLine("Стоимость добавлена!");
-Console.WriteLine("Ваш товар: ");
- purchase = Console.ReadLine();
-purList.Add(purchase);
-Console.WriteLine("Добавлено: " + purchase);
-Console.WriteLine("Стоимость товара " + purchase);
-price = int.Parse(Console.ReadLine());
-Console.WriteLine("Стоимость добавлена!");
-AllSum(priList);
+        List<Purchase> purchases = new List<Purchase>();
+
+        for (int i = 0; i < count; i++)
+        {
+            Console.Write($"Введите название {i + 1} покупки: ");
+            string name = Console.ReadLine();
+
+            Console.Write($"Введите стоимость {i + 1} покупки: ");
+            decimal price = Convert.ToDecimal(Console.ReadLine());
+
+            purchases.Add(new Purchase(name, price));
+        }
+
+        decimal total = 0;
+        decimal vat = 0;
+
+        Console.WriteLine("Чек:");
+        foreach (var purchase in purchases)
+        {
+            Console.WriteLine($"{purchase.Name} - {purchase.Price} руб.");
+
+            total += purchase.Price;
+            vat += purchase.Price * 0.2m; // 20% НДС
+        }
+
+        Console.WriteLine($"Общая сумма: {total} руб.");
+        Console.WriteLine($"НДС: {vat} руб.");
+        Console.WriteLine($"Итого: {total + vat} руб.");
+    }
+}
+class Purchase
+{
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+
+    public Purchase(string name, decimal price)
+    {
+        Name = name;
+        Price = price;
+    }
+}*/
