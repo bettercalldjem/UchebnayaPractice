@@ -1228,3 +1228,86 @@ class Program
 //        fileProcessor.Run();
 //    }
 //}
+
+////35
+/*using System;
+using System.Collections.Generic;
+
+class Calendar
+{
+    private Dictionary<DateTime, string> _notes = new Dictionary<DateTime, string>();
+    private int _year;
+    private int _month;
+
+    public Calendar(int year, int month)
+    {
+        _year = year;
+        _month = month;
+    }
+
+    public void Run()
+    {
+        Console.WriteLine($"Календарь на {_month} {_year} год");
+
+        int daysInMonth = DateTime.DaysInMonth(_year, _month);
+        int firstDayOfWeek = (int)new DateTime(_year, _month, 1).DayOfWeek;
+
+        Console.WriteLine(" Пн  Вт  Ср  Чт   Пт  Сб  Вс");
+
+        for (int i = 0; i < firstDayOfWeek; i++)
+        {
+            Console.Write("  ");
+        }
+
+       
+        for (int i = 1; i <= daysInMonth; i++)
+        {
+            Console.Write($"{i,3} ");
+
+           
+            if ((i + firstDayOfWeek) % 7 == 0)
+            {
+                Console.WriteLine();
+            }
+        }
+
+        Console.WriteLine();
+
+        for (int i = 1; i <= daysInMonth; i++)
+        {
+            DateTime date = new DateTime(_year, _month, i);
+            Console.Write($"Введите заметку для {i} числа {(_notes.ContainsKey(date) ? "y/n" : "")}: ");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "y")
+            {
+                Console.Write("Введите заметку: ");
+                string note = Console.ReadLine();
+                _notes[date] = note; 
+            }
+            else if (input.ToLower() == "n" && _notes.ContainsKey(date))
+            {
+                _notes.Remove(date);
+            }
+        }
+
+        Console.WriteLine("Заметки:");
+   
+        foreach (var note in _notes)
+        {
+            Console.WriteLine($"{note.Key.Day} число: {note.Value}");
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int year = DateTime.Now.Year;
+        int month = DateTime.Now.Month;
+
+        Calendar calendar = new Calendar(year, month);
+        calendar.Run();
+    }
+}*/
