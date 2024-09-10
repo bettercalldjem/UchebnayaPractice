@@ -1167,3 +1167,64 @@ class Program
         todoList.Run();
     }
 }*/
+//34
+//using System;
+//using System.IO;
+
+//class FileProcessor
+//{
+//    public void Run()
+//    {
+//        Console.Write("Введите имя файла для чтения: ");
+//        string inputFileName = Console.ReadLine();
+
+//        Console.Write("Введите имя файла для записи: ");
+//        string outputFileName = Console.ReadLine();
+
+//        try
+//        {
+//            string text = File.ReadAllText(inputFileName);
+//            string modifiedText = ModifyText(text);
+
+//            File.WriteAllText(outputFileName, modifiedText);
+
+//            Console.WriteLine("Текст записан в файл.");
+//        }
+//        catch (FileNotFoundException)
+//        {
+//            Console.WriteLine("Файл для чтения не найден.");
+//        }
+//        catch (Exception ex)
+//        {
+//            Console.WriteLine("Ошибка: " + ex.Message);
+//        }
+//    }
+
+//    private string ModifyText(string text)
+//    {
+//        char[] chars = text.ToCharArray();
+
+//        for (int i = 0; i < chars.Length; i++)
+//        {
+//            if (char.IsLower(chars[i]))
+//            {
+//                chars[i] = char.ToUpper(chars[i]);
+//            }
+//            else if (char.IsUpper(chars[i]))
+//            {
+//                chars[i] = char.ToLower(chars[i]);
+//            }
+//        }
+
+//        return new string(chars);
+//    }
+//}
+
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        FileProcessor fileProcessor = new FileProcessor();
+//        fileProcessor.Run();
+//    }
+//}
