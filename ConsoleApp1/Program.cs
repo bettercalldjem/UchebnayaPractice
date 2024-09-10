@@ -624,3 +624,60 @@ class Purchase
         Price = price;
     }
 }*/
+////26 
+/*using System;
+
+class TimeCalculator
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Введите первое время (часы и минуты через пробел): ");
+        string[] time1 = Console.ReadLine().Split(' ');
+        int hours1 = Convert.ToInt32(time1[0]);
+        int minutes1 = Convert.ToInt32(time1[1]);
+
+        Console.Write("Введите второе время (часы и минуты через пробел): ");
+        string[] time2 = Console.ReadLine().Split(' ');
+        int hours2 = Convert.ToInt32(time2[0]);
+        int minutes2 = Convert.ToInt32(time2[1]);
+
+        Console.Write("Выберите операцию (+ или -): ");
+        string operation = Console.ReadLine();
+
+        if (operation == "+")
+        {
+            AddTime(hours1, minutes1, hours2, minutes2);
+        }
+        else if (operation == "-")
+        {
+            SubtractTime(hours1, minutes1, hours2, minutes2);
+        }
+        else
+        {
+            Console.WriteLine("Неправильная операция");
+        }
+    }
+
+    static void AddTime(int hours1, int minutes1, int hours2, int minutes2)
+    {
+        int totalMinutes = minutes1 + minutes2;
+        int totalHours = hours1 + hours2 + totalMinutes / 60;
+        totalMinutes %= 60;
+
+        Console.WriteLine($"Результат: {totalHours} часов {totalMinutes} минут");
+    }
+
+    static void SubtractTime(int hours1, int minutes1, int hours2, int minutes2)
+    {
+        int totalMinutes = minutes1 - minutes2;
+        int totalHours = hours1 - hours2;
+
+        if (totalMinutes < 0)
+        {
+            totalMinutes += 60;
+            totalHours--;
+        }
+
+        Console.WriteLine($"Результат: {totalHours} часов {totalMinutes} минут");
+    }
+}*/
