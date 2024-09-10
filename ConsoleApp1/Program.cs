@@ -1531,3 +1531,179 @@ namespace StudentGradeSystem
         }
     }
 }*/
+//37
+//using System;
+//using System.Collections.Generic;
+
+//namespace ContactBook
+//{
+//    class Contact
+//    {
+//        public string Name { get; set; }
+//        public string Phone { get; set; }
+//        public string Email { get; set; }
+
+//        public Contact(string name, string phone, string email)
+//        {
+//            Name = name;
+//            Phone = phone;
+//            Email = email;
+//        }
+//    }
+
+//    class ContactBook
+//    {
+//        private List<Contact> contacts = new List<Contact>();
+
+//        public void AddContact()
+//        {
+//            Console.WriteLine("Введите имя контакта:");
+//            string name = Console.ReadLine();
+
+//            Console.WriteLine("Введите телефон контакта:");
+//            string phone = Console.ReadLine();
+
+//            Console.WriteLine("Введите email контакта:");
+//            string email = Console.ReadLine();
+
+//            contacts.Add(new Contact(name, phone, email));
+//            Console.WriteLine("Контакт добавлен.");
+//        }
+
+//        public void DeleteContact()
+//        {
+//            Console.WriteLine("Введите имя контакта для удаления:");
+//            string name = Console.ReadLine();
+
+//            Contact contactToDelete = contacts.Find(c => c.Name == name);
+
+//            if (contactToDelete != null)
+//            {
+//                contacts.Remove(contactToDelete);
+//                Console.WriteLine("Контакт удален.");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Контакт не найден.");
+//            }
+//        }
+
+//        public void EditContact()
+//        {
+//            Console.WriteLine("Введите имя контакта для редактирования:");
+//            string name = Console.ReadLine();
+
+//            Contact contactToEdit = contacts.Find(c => c.Name == name);
+
+//            if (contactToEdit != null)
+//            {
+//                Console.WriteLine("Введите новое имя (пустое поле для пропуска):");
+//                string newName = Console.ReadLine();
+//                if (!string.IsNullOrEmpty(newName))
+//                {
+//                    contactToEdit.Name = newName;
+//                }
+
+//                Console.WriteLine("Введите новый телефон (пустое поле для пропуска):");
+//                string newPhone = Console.ReadLine();
+//                if (!string.IsNullOrEmpty(newPhone))
+//                {
+//                    contactToEdit.Phone = newPhone;
+//                }
+
+//                Console.WriteLine("Введите новый email (пустое поле для пропуска):");
+//                string newEmail = Console.ReadLine();
+//                if (!string.IsNullOrEmpty(newEmail))
+//                {
+//                    contactToEdit.Email = newEmail;
+//                }
+
+//                Console.WriteLine("Контакт изменен.");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Контакт не найден.");
+//            }
+//        }
+
+//        public void SearchContact()
+//        {
+//            Console.WriteLine("Введите имя контакта для поиска:");
+//            string name = Console.ReadLine();
+
+//            Contact foundContact = contacts.Find(c => c.Name == name);
+
+//            if (foundContact != null)
+//            {
+//                Console.WriteLine($"Имя: {foundContact.Name}");
+//                Console.WriteLine($"Телефон: {foundContact.Phone}");
+//                Console.WriteLine($"Email: {foundContact.Email}");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Контакт не найден.");
+//            }
+//        }
+
+//        public void ShowAllContacts()
+//        {
+//            if (contacts.Count == 0)
+//            {
+//                Console.WriteLine("В телефонной книге нет контактов.");
+//                return;
+//            }
+
+//            Console.WriteLine("Список контактов:");
+//            foreach (Contact contact in contacts)
+//            {
+//                Console.WriteLine($"Имя: {contact.Name}, Телефон: {contact.Phone}, Email: {contact.Email}");
+//            }
+//        }
+//    }
+
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            ContactBook contactBook = new ContactBook();
+
+//            while (true)
+//            {
+//                Console.WriteLine("Выберите действие:");
+//                Console.WriteLine("1. Добавить контакт");
+//                Console.WriteLine("2. Удалить контакт");
+//                Console.WriteLine("3. Редактировать контакт");
+//                Console.WriteLine("4. Найти контакт");
+//                Console.WriteLine("5. Показать все контакты");
+//                Console.WriteLine("6. Выход");
+
+//                string choice = Console.ReadLine();
+
+//                switch (choice)
+//                {
+//                    case "1":
+//                        contactBook.AddContact();
+//                        break;
+//                    case "2":
+//                        contactBook.DeleteContact();
+//                        break;
+//                    case "3":
+//                        contactBook.EditContact();
+//                        break;
+//                    case "4":
+//                        contactBook.SearchContact();
+//                        break;
+//                    case "5":
+//                        contactBook.ShowAllContacts();
+//                        break;
+//                    case "6":
+//                        Console.WriteLine("До свидания!");
+//                        return;
+//                    default:
+//                        Console.WriteLine("Некорректный выбор.");
+//                        break;
+//                }
+//            }
+//        }
+//    }
+//}
