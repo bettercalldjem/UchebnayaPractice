@@ -797,3 +797,47 @@ class LinearSystemSolver
         }
     }
 }*/
+////29
+/*using System;
+using System.IO;
+
+class DiskMonitoring
+{
+    static void Main(string[] args)
+    {
+        DriveInfo[] drives = DriveInfo.GetDrives();
+
+        foreach (DriveInfo drive in drives)
+        {
+            if (drive.IsReady)
+            {
+                Console.WriteLine($"Диск: {drive.Name}");
+                Console.WriteLine($"Тип диска: {drive.DriveType}");
+                Console.WriteLine($"Общий размер: {GetFileSize(drive.TotalSize)}");
+                Console.WriteLine($"Свободное место: {GetFileSize(drive.AvailableFreeSpace)}");
+                Console.WriteLine($"Занятое место: {GetFileSize(drive.TotalSize - drive.AvailableFreeSpace)}");
+                Console.WriteLine();
+            }
+        }
+    }
+
+    static string GetFileSize(long size)
+    {
+        if (size < 1024)
+        {
+            return $"{size} байт";
+        }
+        else if (size < 1024 * 1024)
+        {
+            return $"{size / 1024} КБ";
+        }
+        else if (size < 1024 * 1024 * 1024)
+        {
+            return $"{size / (1024 * 1024)} МБ";
+        }
+        else
+        {
+            return $"{size / (1024 * 1024 * 1024)} ГБ";
+        }
+    }
+}*/
