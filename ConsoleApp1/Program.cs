@@ -1000,3 +1000,170 @@ public class Data
     public string City { get; set; }
 }
 */
+////32
+/*using System;
+using System.Data;
+
+class Xml
+{
+    static void Main(string[] args)
+    {
+        string xmlFilePath = "data.xml";
+
+        try
+        {
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(xmlFilePath);
+
+            Console.WriteLine("Данные из XML-файла:");
+            Console.WriteLine("------------------------");
+
+            foreach (DataTable table in dataSet.Tables)
+            {
+                Console.WriteLine($"Таблица: {table.TableName}");
+
+                foreach (DataColumn column in table.Columns)
+                {
+                    Console.Write($"| {column.ColumnName} |");
+                }
+
+                Console.WriteLine();
+
+                foreach (DataRow row in table.Rows)
+                {
+                    foreach (object value in row.ItemArray)
+                    {
+                        Console.Write($"| {value} |");
+                    }
+
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка чтения XML-файла: " + ex.Message);
+        }
+    }
+}
+*/
+////33
+/*using System;
+using System.Collections.Generic;
+
+class TodoList
+{
+    private List<TodoItem> _todoItems = new List<TodoItem>();
+
+    public void Run()
+    {
+        while (true)
+        {
+            Console.WriteLine("Ведение списка дел:");
+            Console.WriteLine("------------------------");
+            Console.WriteLine("1. Добавить задачу");
+            Console.WriteLine("2. Удалить задачу");
+            Console.WriteLine("3. Отметить задачу как выполненную");
+            Console.WriteLine("4. Показать список задач");
+            Console.WriteLine("5. Выход");
+
+            Console.Write("Выберите действие: ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    AddTodoItem();
+                    break;
+                case 2:
+                    RemoveTodoItem();
+                    break;
+                case 3:
+                    MarkTodoItemAsDone();
+                    break;
+                case 4:
+                    ShowTodoList();
+                    break;
+                case 5:
+                    return;
+                default:
+                    Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                    break;
+            }
+        }
+    }
+
+    private void AddTodoItem()
+    {
+        Console.Write("Введите описание задачи: ");
+        string description = Console.ReadLine();
+
+        TodoItem todoItem = new TodoItem { Description = description, IsDone = false };
+        _todoItems.Add(todoItem);
+
+        Console.WriteLine("Задача добавлена.");
+    }
+
+    private void RemoveTodoItem()
+    {
+        Console.Write("Введите номер задачи для удаления: ");
+        int index = Convert.ToInt32(Console.ReadLine()) - 1;
+
+        if (index >= 0 && index < _todoItems.Count)
+        {
+            _todoItems.RemoveAt(index);
+            Console.WriteLine("Задача удалена.");
+        }
+        else
+        {
+            Console.WriteLine("Неверный номер задачи.");
+        }
+    }
+
+    private void MarkTodoItemAsDone()
+    {
+        Console.Write("Введите номер задачи для отметки как выполненной: ");
+        int index = Convert.ToInt32(Console.ReadLine()) - 1;
+
+        if (index >= 0 && index < _todoItems.Count)
+        {
+            _todoItems[index].IsDone = true;
+            Console.WriteLine("Задача отмечена как выполненная.");
+        }
+        else
+        {
+            Console.WriteLine("Неверный номер задачи.");
+        }
+    }
+
+    private void ShowTodoList()
+    {
+        Console.WriteLine("Список задач:");
+        Console.WriteLine("------------------------");
+
+        for (int i = 0; i < _todoItems.Count; i++)
+        {
+            TodoItem todoItem = _todoItems[i];
+            string status = todoItem.IsDone ? "Выполнена" : "Не выполнена";
+
+            Console.WriteLine($"{i + 1}. {todoItem.Description} - {status}");
+        }
+    }
+}
+
+public class TodoItem
+{
+    public string Description { get; set; }
+    public bool IsDone { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        TodoList todoList = new TodoList();
+        todoList.Run();
+    }
+}*/
