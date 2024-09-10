@@ -1350,3 +1350,184 @@ class Program
         calendar.Run();
     }
 }*/
+//task 36
+/*using System;
+using System.Collections.Generic;
+
+namespace StudentGradeSystem
+{
+    class Student
+    {
+        public string Name { get; set; }
+        public string Group { get; set; }
+        public Dictionary<string, List<int>> Grades { get; set; } = new Dictionary<string, List<int>>();
+
+        public Student(string name, string group)
+        {
+            Name = name;
+            Group = group;
+        }
+
+        public void AddGrade(string subject, int grade)
+        {
+            if (Grades.ContainsKey(subject))
+            {
+                Grades[subject].Add(grade);
+            }
+            else
+            {
+                Grades.Add(subject, new List<int>() { grade });
+            }
+        }
+
+        public double GetAverageGrade()
+        {
+            if (Grades.Count == 0)
+            {
+                return 0;
+            }
+
+            int totalGrades = 0;
+            foreach (var subjectGrades in Grades.Values)
+            {
+                totalGrades += subjectGrades.Sum();
+            }
+
+            return (double)totalGrades / Grades.Count;
+        }
+    }
+
+    class GradeSystem
+    {
+        private Dictionary<string, Student> Students { get; set; } = new Dictionary<string, Student>();
+
+        public void AddStudent()
+        {
+            Console.WriteLine("Введите имя студента:");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Введите группу студента:");
+            string group = Console.ReadLine();
+
+            if (!Students.ContainsKey(name))
+            {
+                Students.Add(name, new Student(name, group));
+                Console.WriteLine($"Студент {name} добавлен в систему.");
+            }
+            else
+            {
+                Console.WriteLine($"Студент {name} уже существует в системе.");
+            }
+        }
+
+        public void AddGrade()
+        {
+            Console.WriteLine("Введите имя студента:");
+            string studentName = Console.ReadLine();
+
+            if (Students.ContainsKey(studentName))
+            {
+                Console.WriteLine("Введите предмет:");
+                string subject = Console.ReadLine();
+
+                Console.WriteLine("Введите оценку:");
+                if (int.TryParse(Console.ReadLine(), out int grade))
+                {
+                    Students[studentName].AddGrade(subject, grade);
+                    Console.WriteLine($"Оценка {grade} по предмету {subject} добавлена для {studentName}.");
+                }
+                else
+                {
+                    Console.WriteLine("Некорректный ввод оценки.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Студент {studentName} не найден в системе.");
+            }
+        }
+
+        public void GetStudentInfo()
+        {
+            Console.WriteLine("Введите имя студента:");
+            string studentName = Console.ReadLine();
+            GetStudentInfo(studentName);
+        }
+
+        public void GetStudentInfo(string studentName)
+        {
+            if (Students.ContainsKey(studentName))
+            {
+                Student student = Students[studentName];
+                Console.WriteLine($"Студент: {student.Name}, Группа: {student.Group}");
+                Console.WriteLine("Оценки:");
+                foreach (var subject in student.Grades)
+                {
+                    Console.WriteLine($"{subject.Key}: {string.Join(", ", subject.Value)}");
+                }
+                Console.WriteLine($"Средний балл: {student.GetAverageGrade():F2}");
+            }
+            else
+            {
+                Console.WriteLine($"Студент {studentName} не найден в системе.");
+            }
+        }
+
+        public void GetAllStudents()
+        {
+            if (Students.Count == 0)
+            {
+                Console.WriteLine("В системе нет студентов.");
+            }
+            else
+            {
+                foreach (var student in Students.Values)
+                {
+                    Console.WriteLine($"Студент: {student.Name}, Группа: {student.Group}");
+                }
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            GradeSystem system = new GradeSystem();
+
+            while (true)
+            {
+                Console.WriteLine("Выберите действие:");
+                Console.WriteLine("1. Добавить студента");
+                Console.WriteLine("2. Добавить оценку");
+                Console.WriteLine("3. Вывести информацию о студенте");
+                Console.WriteLine("4. Вывести всех студентов");
+                Console.WriteLine("5. Выход");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        system.AddStudent();
+                        break;
+                    case "2":
+                        system.AddGrade();
+                        break;
+                    case "3":
+                        system.GetStudentInfo();
+                        break;
+                    case "4":
+                        system.GetAllStudents();
+                        break;
+                    case "5":
+                        Console.WriteLine("До свидания!");
+                        return;
+                    default:
+                        Console.WriteLine("Некорректный выбор.");
+                        break;
+                }
+            }
+        }
+    }
+}*/
