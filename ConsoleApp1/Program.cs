@@ -841,3 +841,119 @@ class DiskMonitoring
         }
     }
 }*/
+/*using System;
+using System.IO;
+
+class FileManager
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Файловый менеджер");
+        Console.WriteLine("------------------");
+
+        while (true)
+        {
+            Console.WriteLine("1. Создать файл");
+            Console.WriteLine("2. Удалить файл");
+            Console.WriteLine("3. Копировать файл");
+            Console.WriteLine("4. Переместить файл");
+            Console.WriteLine("5. Выход");
+
+            Console.Write("Выберите операцию: ");
+            int operation = Convert.ToInt32(Console.ReadLine());
+
+            switch (operation)
+            {
+                case 1:
+                    CreateFile();
+                    break;
+                case 2:
+                    DeleteFile();
+                    break;
+                case 3:
+                    CopyFile();
+                    break;
+                case 4:
+                    MoveFile();
+                    break;
+                case 5:
+                    return;
+                default:
+                    Console.WriteLine("Неправильный выбор. Попробуйте еще раз.");
+                    break;
+            }
+        }
+    }
+
+    static void CreateFile()
+    {
+        Console.Write("Введите имя файла: ");
+        string fileName = Console.ReadLine();
+
+        try
+        {
+            using (FileStream file = File.Create(fileName))
+            {
+                Console.WriteLine("Файл создан успешно.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка создания файла: " + ex.Message);
+        }
+    }
+
+    static void DeleteFile()
+    {
+        Console.Write("Введите имя файла: ");
+        string fileName = Console.ReadLine();
+
+        try
+        {
+            File.Delete(fileName);
+            Console.WriteLine("Файл удален успешно.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка удаления файла: " + ex.Message);
+        }
+    }
+
+    static void CopyFile()
+    {
+        Console.Write("Введите имя исходного файла: ");
+        string sourceFileName = Console.ReadLine();
+
+        Console.Write("Введите имя целевого файла: ");
+        string targetFileName = Console.ReadLine();
+
+        try
+        {
+            File.Copy(sourceFileName, targetFileName);
+            Console.WriteLine("Файл скопирован успешно.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка копирования файла: " + ex.Message);
+        }
+    }
+
+    static void MoveFile()
+    {
+        Console.Write("Введите имя исходного файла: ");
+        string sourceFileName = Console.ReadLine();
+
+        Console.Write("Введите имя целевого файла: ");
+        string targetFileName = Console.ReadLine();
+
+        try
+        {
+            File.Move(sourceFileName, targetFileName);
+            Console.WriteLine("Файл перемещен успешно.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка перемещения файла: " + ex.Message);
+        }
+    }
+}*/
